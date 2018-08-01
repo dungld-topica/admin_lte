@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('admin', function () {
-    return view('admin_template');
+
+Route::group(['prefix' => '/admin'], function () {
+    Route::get('/', function () {
+        return view('admin_template');
+    });
+    
 });
